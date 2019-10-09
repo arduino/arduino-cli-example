@@ -19,7 +19,9 @@ jobs:
         uses: arduino/actions/setup-arduino-cli@master
 
       - name: Install samd platform
-        run: arduino-cli core install arduino:samd
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:samd
 
       - name: Compile Sketch
         run: arduino-cli compile --fqbn arduino:samd:nano_33_iot ./blink
