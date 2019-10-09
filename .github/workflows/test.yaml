@@ -1,0 +1,25 @@
+name: test
+
+on: [push, pull_request]
+
+jobs:
+  test-matrix:
+
+    strategy:
+      matrix:
+        operating-system: [ubuntu-18.04, windows-2019]
+
+    runs-on: ${{ matrix.operating-system }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup Arduino CLI
+        uses: arduino/actions/setup-arduino-cli@master
+
+      - name: Install samd platform
+        run: arduino-cli core install arduino:samd
+
+      - name: Compile Sketch
+        run: arduino-cli compile --fqbn arduino:samd:nano_33_iot ./blink
