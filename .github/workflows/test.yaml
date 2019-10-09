@@ -7,9 +7,15 @@ jobs:
 
     strategy:
       matrix:
-        operating-system: [ubuntu-18.04, windows-2019]
+        arduino-platform: ["arduino:samd", "arduino:avr"]
+        include:
+          - arduino-platform: "arduino:samd"
+            fqbn: "arduino:samd:nano_33_iot"
+          - arduino-platform: "arduino:avr"
+            fqbn: "arduino:avr:unowifi"
 
-    runs-on: ${{ matrix.operating-system }}
+
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -18,10 +24,10 @@ jobs:
       - name: Setup Arduino CLI
         uses: arduino/actions/setup-arduino-cli@master
 
-      - name: Install samd platform
+      - name: Install platform
         run: |
           arduino-cli core update-index
-          arduino-cli core install arduino:samd
+          arduino-cli core install ${{ matrix.arduino-platform }}
 
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn arduino:samd:nano_33_iot ./blink
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./blink
