@@ -47,9 +47,9 @@ jobs:
       # We use the `arduino/setup-arduino-cli` action to install and
       # configure the Arduino CLI on the system.
       - name: Setup Arduino CLI
-        uses: arduino/actions/setup-arduino-cli@master
+        uses: arduino/actions/setup-arduino-cli@1.0.0
 
-      # We then install the plaform, which one will be determined
+      # We then install the platform, which one will be determined
       # dynamically by the build matrix.
       - name: Install platform
         run: |
