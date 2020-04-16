@@ -27,7 +27,7 @@ jobs:
         # needed to compile against a certain FQBN, at that point the
         # following `include` section will be useless.
         include:
-          # This works like this: when the platformn is "arduino:samd", the
+          # This works like this: when the platform is "arduino:samd", the
           # variable `fqbn` is set to "arduino:samd:nano_33_iot".
           - arduino-platform: "arduino:samd"
             fqbn: "arduino:samd:nano_33_iot"
