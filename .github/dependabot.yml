@@ -11,3 +11,11 @@ updates:
       interval: daily
     labels:
       - "topic: infrastructure"
+
+  - package-ecosystem: github-actions
+    target-branch: dependabot-all-production-branches
+    directory: /
+    schedule:
+      interval: daily
+    labels:
+      - "topic: infrastructure"
