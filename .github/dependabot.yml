@@ -7,6 +7,8 @@ updates:
   # See: https://docs.github.com/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot
   - package-ecosystem: github-actions
     directory: / # Check the repository's workflows under /.github/workflows/
+    assignees:
+      - per1234
     schedule:
       interval: daily
     labels:
@@ -15,6 +17,8 @@ updates:
   - package-ecosystem: github-actions
     target-branch: compile-sketches-demo
     directory: /
+    assignees:
+      - per1234
     schedule:
       interval: daily
     labels:
