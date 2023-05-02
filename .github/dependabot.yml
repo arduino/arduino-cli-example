@@ -13,7 +13,7 @@ updates:
       - "topic: infrastructure"
 
   - package-ecosystem: github-actions
-    target-branch: dependabot-all-production-branches
+    target-branch: compile-sketches-demo
     directory: /
     schedule:
       interval: daily
