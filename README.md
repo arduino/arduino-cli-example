@@ -1,5 +1,5 @@
 # Arduino on GitHub Actions
-
+ d
 [![Actions Status](https://github.com/arduino/arduino-cli-example/workflows/test/badge.svg)](https://github.com/arduino/arduino-cli-example/actions)
 
 This repo is the companion of a blog post on Arduino's engineering blog about
